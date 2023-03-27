@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Expression</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+</head>
+<body ng-app="">
+    <!-- ng-app is for calculate -->
+    <center>
+        <h2>Expression</h2>
+    <div>
+       <h2> <p>{{100+100}}<br>
+    
+        {{  "Welcome" + "all" }}<br>
+        {{true+false}}<br>
+        {{100*200}}
+
+    
+    </p></h2>
+    </div>
+    <div ng-init="s=25">
+        Area of Square whose side is 25 =
+        {{s*s}}<br>
+        <span ng-bind="s*s"></span>
+
+    </div>
+    <div ng-init="r=10;pi=3.14">
+    Area of the circle r is ={{ 2*pi*r*r}}
+    </div>
+    <div ng-init="firstName='Tamil';surname='selvi'">
+        {{firstName}}
+        {{surname}}
+
+    </div>
+    <div ng-init="array=[500,510,520]">
+        {{array[2] }}
+    </div>
+    <div ng-init="employee={name:'Buddy',id:'22',age:'25'}">
+       Employee name is  {{employee.name}}<br>
+       Employee age is {{employee.age}}<br>
+        Employee id is  {{employee.id}}<br>
+    </div>
+    </center>   
+</body>
+</html>

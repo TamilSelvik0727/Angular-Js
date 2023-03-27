@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Scope</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+    <script>
+        var app = angular.module('studentInfo',[]);
+        // rootscope
+        app.run(function($rootscope){
+            $rootscope.info="Result";
+        });
+        app.controller("studentCtrl",function($scope){
+            $scope.info="Student Information";
+            $scope.name="ANBU";//data
+            $scope.grade=" Grade A";
+            $scope.gradeInfo=function(){//method
+                alert("Grade A > 90");
+            }
+        });
+    
+    </script>
+
+</head>
+<body ng-app="studentInfo">
+   <h3> {{info}}</h3>
+
+    
+    <div ng-controller="studentCtrl">
+        <h1>{{info}}</h1>
+        Student Name:{{name}}<br>
+        Grade:
+      <span ng-bind='grade'></span><br>
+      <input type="text" ng-model="name"><br>
+      <br>
+      <input type="button" value="MarksInfo" ng-click='gradeInfo()'>
+
+    </div>
+    <div> 
+        {info}
+    </div>
+    
+</body>
+</html>

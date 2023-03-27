@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="custApp">
+    <!-- NG-DIRECTIVE -->
+<head>
+    
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+    <script type="text/javascript">
+        var app=angular.module("custApp",[]);
+        //Controller
+        app.controller('myCustomer',function($scope){
+            //Model
+            $scope.customer={
+                'Name':'TamilSelvi',
+                'Gender':'Female',
+                'Job':'Software '
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- view part -->
+    <h1>mvc architecture angular</h1>
+    <p>model,view,controller </p>
+    <div ng-controller='myCustomer'>
+        <!-- ATTRIBUTE -->
+    <h3>{{customer.Name}}</h3>
+    <h3>{{customer.Gender}}</h3>
+    <h3>{{customer.Job}}</h3>
+
+</div>
+</body>
+</html>

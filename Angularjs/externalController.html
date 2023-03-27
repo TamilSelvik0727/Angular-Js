@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>External Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+    <script src="resultController.js"></script>
+    <style>
+        body{
+            background-color:lightpink;
+            color: darkblue;
+            font-size: 22px;
+
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller='resultCtrl'>
+
+            <ol>
+                <li ng-repeat='x in result'>
+                    {{x.name +" - "+ x.grade}}
+
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+</body>
+</html>

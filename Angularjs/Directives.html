@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngctrlApp">
+<head>
+    
+    <title>Directives</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+    <script> 
+    
+    var ngApp=angular.module('ngctrlApp',[]);
+    ngApp.controller('myController',function($scope){
+
+    
+    $scope.msg="Angular Directives"
+    });
+    </script>
+    <style>
+        body{
+            background-color: aqua;
+            width: 800px;
+            margin:auto;
+            font-size: 22px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body ng-app>
+    <h1>angular js Directives</h1>
+    <div >
+        <p>
+            {{5+15}}<br>
+            {{"hii"+"TamilSelvi"}}<br>
+            {{100*43}}
+        </p>
+    </div>
+
+    <div ng-init="radius=50;PI=3.14">
+        Circumference of circle of radius 50 is{{2*PI*radius}}<br>
+        Circumference:<span ng-bind="2*PI*radius"></span>
+    </div>
+
+    <div>
+        course:<input type="text" ng-model="course"><br>
+
+        {{course}}
+
+    </div>
+    <div ng-init="array=[500,555,111,222,333]">
+        <ul>
+            <li ng-repeat="x in array">{{ x }}
+                <!-- for collection of items -->
+
+            </li>
+        </ul>
+
+    </div>
+    <div ng-init="checked=true">
+        New User: <input type="checkbox" ng-model="checked">
+        <br>
+        Name: <input type="text" ng-if="checked"><br>
+
+        Read Only <input type="text" ng-readonly="checked" value="Myprogram">
+        <br>
+        Disabled: <input type="text" ng-disabled="checked" value="welcome to learn angular js">
+    </div>
+    <br>
+
+    <div ng-controller="myController">
+      Controller Msg:  {{msg}}
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Module</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+    <style>
+        body{
+            background-color: aqua;
+            margin: auto;
+            width: 800px;
+            font-size: 22px;
+            color: black;
+        }   
+    </style>
+</head>
+<body ng-app="myChannel">
+    <h3>Module</h3>
+    <div ng-controller="myCtrl">
+        ChannelName: {{cname}} <br>
+        Creator:{{ownwer}} <br><br>
+        {{msg}}<br>
+       
+    </div>
+    <script>
+        var myApp=angular.module("myChannel",[]);// we can add components
+        myApp.controller("myCtrl",function($scope){//we can use this seperate file also .js
+            $scope.cname="MyProgrammingLine";
+            $scope.ownwer="Tamil Selvi";
+            $scope.msg="Welcome to Learn Angular Js";
+        });
+    </script>
+    <!-- can add many controller classs -->
+
+</body>
+</html>

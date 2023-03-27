@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Controller</title>
+    <style>
+        body{
+            background-color: brown;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 800px;
+            margin: auto;
+            font-size: 22px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>  
+</head>
+<body ng-app="ngCtrApp">
+    <h1 style="text-align: center;">Controller</h1>
+    <div ng-controller="myController">
+
+        {{message}}
+        <br>
+        <button ng-click="name()">DisplayName</button>
+        <br>
+        Enter email<input type="text" ng-model="mail"><br>
+
+        <button ng-click="mailID(mail)">Display Mail ID</button>
+        <br>
+        <button ng-click="age()">Display the age</button><br>
+         Enter address<input type="text" ng-model="address"><br>
+         <button ng-click="detail(address)">Display the address</button>
+    </div>
+  
+    <div ng-controller="controller2">
+
+        First Name:{{firstName}}<br>
+        Sur Name:{{surName}}<br>
+        {{firstName+""+surName}}
+    </div>
+
+    <div ng-controller="ngCtrl">
+            course <input type="text" ng-model="course"><br>
+            Duration <input type="text" ng-model="duration"><br>
+            Course with Duration: {{course+""+duration}}
+    </div>
+    <br>
+    <div ng-controller="ngCtrlObject">
+    Employee Name:{{employee.name}}<br>
+    Employee Salary:{{employee.salary}}<br>
+    </div><br>
+    <!-- nested controller -->
+    <div ng-controller="ngCtrlParent">
+        Parent:{{info}}
+        <div ng-controller="ngCtrlChild">
+            Child:{{info}}<br>
+            Parent inside Child:{{info}}
+        </div>
+        Child inside Parent:{{info1}}
+
+    </div>
+
+    <script>
+        var app = angular.module('ngCtrApp',[]);
+        app.controller("myController",function($scope){
+            $scope.message="Angular js Controllers";
+            $scope.name=function(){
+                alert("JOYTAMIL");
+            }
+           
+            $scope.mailID = function(message){
+                alert(message)
+            }
+            $scope.age=function(){
+                alert("10");
+            }
+            $scope.detail=function(message){
+                alert(message);
+            }
+
+        });
+        app.controller("controller2",function($scope){
+            $scope.firstName="Tamil";
+            $scope.surName="Selvi";
+
+            
+        });
+        app.controller("ngCtrl",function($scope){
+            $scope.course="AngularJS";
+            $scope.duration="3 months";
+
+        });
+        // object Controllers
+        app.controller("ngCtrlObject",function($scope){
+            $scope.employee={name:'TAMIL',salary:'700000'};
+
+        });
+
+        app.controller("ngCtrlParent",function($scope){
+            $scope.info="Hello friends";
+        });
+        app.controller("ngCtrlChild",function($scope){
+            $scope.info="Hello Buddies";
+        });
+    </script>
+    
+</body>
+</html>
